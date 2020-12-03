@@ -29,10 +29,12 @@ def run():
   2. You have to guess it
   3. Enjoy! 
     """)
-  lives = select_mode(input("What mode do you want to play the game in? (easy/hard)").lower())
+  user_mode = input("What mode do you want to play the game in? (easy/hard)").lower()
+  lives = select_mode(user_mode)
+  print(f"Okay, since you chose {user_mode}, you have {lives} lives in total")
   computer_choice = select_random(number_list)
   print("""
-  Okay, I'm thinking of a number
+Okay, I'm thinking of a number
   """)
   while True:
     user_choice = int(input("Guess my number: "))
@@ -43,13 +45,16 @@ def run():
       print("Too High!")
       lives -= 1
       print(f"You have {lives} lives left")
+      if lives == 0:
+        print("Game Over, U lost :C")
+        break
     elif user_choice < computer_choice:
       print("Too Low!")
       lives -= 1
+      if lives == 0:
+        print("Game Over, U lost :C")
+        break
       print(f"You have {lives} lives left")
-    elif lives == 0:
-      print("Game Over, U lost :C")
-      break
   user_choice2 = input("Do u want to play again? (y/n): ")
   if user_choice2 == 'y' or user_choice2 == 'yes':
     system("CLS")
