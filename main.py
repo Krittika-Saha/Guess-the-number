@@ -29,12 +29,11 @@ def run():
   2. You have to guess it
   3. Enjoy! 
     """)
-  lives = select_mode(input("What mode do you want to play the game in?").lower())
+  lives = select_mode(input("What mode do you want to play the game in? (easy/hard)").lower())
   computer_choice = select_random(number_list)
   print("""
   Okay, I'm thinking of a number
   """)
-  print(f"Psst, the number is {computer_choice}")
   while True:
     user_choice = int(input("Guess my number: "))
     if user_choice == computer_choice:
