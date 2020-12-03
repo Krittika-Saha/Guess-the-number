@@ -25,7 +25,7 @@ def run():
   {logo}
   Hello! This is a number guessing game
   --------Rules------
-  1. I'll be guessing a number from 1-100
+  1. I'll be picking a number from 1-100
   2. You have to guess it
   3. Enjoy! 
     """)
